@@ -18,12 +18,13 @@ export default function ProjectsSelector({
     console.log("emphasized: " + emphasized)
   }
   function handleMouseEnter(index) {
+    console.log("handleMouseEnter", index)
     setHovered(index)
   }
   function handleMouseLeave() {
     setHovered(null)
   }
-  const emphasized = hovered ? hovered : selected
+  const emphasized = hovered == 0 || hovered ? hovered : selected
 
   return (
     <>
