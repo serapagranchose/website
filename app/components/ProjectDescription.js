@@ -20,7 +20,7 @@ export default function ProjectDescription({
             </Link>
             <div className="flex items-center">STATUS:
               <h2 className="text-2xl flex">[</h2>
-                <h2 className={`text-2xl ${project?.isup ? 'text-green' : 'text-red'} pl-1`}>{project?.isUp ? "UP" : "DOWN"}</h2>
+                <h2 className={`text-2xl ${project?.isup ? 'text-green' : 'text-red'} pl-1`}>{project?.isup ? "UP" : "DOWN"}</h2>
               <h2 className="text-2xl">]</h2>
             </div>
           </div>
