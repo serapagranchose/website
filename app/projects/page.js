@@ -2,12 +2,14 @@ import Navbar from '../components/Navbar';
 import ProjectsSelector from '../components/ProjectsSelector';
 
 export default async function Projects() {
-  const data = await fetch("https://gist.githubusercontent.com/serapagranchose/bc9b8dd8959b352699aa258a7924b729/raw/e40b98bf9fc5a42a4df9baec46a3bbf24302eda0/resume.json", {
+  const data = await fetch("https://api.github.com/gists/bc9b8dd8959b352699aa258a7924b729", {
     next: { revalidate: 10 },
   }).then(results => {
     return results.json();
+  }).then(gistData => {
+    return JSON.parse(gistData.files["resume.json"].content);
   })
-
+  
   return (
     <>
       <Navbar/>
