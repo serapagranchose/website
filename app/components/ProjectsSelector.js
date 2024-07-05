@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image';
 import { useState } from 'react'
 
 import ProjectTab from './ProjectTab';
@@ -15,10 +14,8 @@ export default function ProjectsSelector({
 
   function handleClick(index) {
     selected == index ? setSelected(null) : setSelected(index)
-    console.log("emphasized: " + emphasized)
   }
   function handleMouseEnter(index) {
-    console.log("handleMouseEnter", index)
     setHovered(index)
   }
   function handleMouseLeave() {
@@ -44,7 +41,7 @@ export default function ProjectsSelector({
         })}
       </div>
       <div className="relative w-2/3">
-        <ProjectThumbnail />
+        <ProjectThumbnail project={projects[emphasized]}/>
         <ProjectDescription project={projects[emphasized]} />
       </div>
     </>
