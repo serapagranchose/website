@@ -21,7 +21,7 @@ export default function TypeWritter() {
         <h2 className="text-4xl"></h2>
       </ReactTyped>
       <ReactTyped
-        strings={["V"]}
+        strings={["▮"]}
         typeSpeed={20}
         backSpeed={20}
         showCursor={false}
