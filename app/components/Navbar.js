@@ -9,7 +9,7 @@ export default async function Navbar() {
           className="text-4xl"
           href="/"
         >
-          OMG6WINGEDSNAKE
+          SÉRAPHIN PERROT
         </Link>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center lg:static lg:h-auto lg:w-auto lg:bg-none">
           <Link
