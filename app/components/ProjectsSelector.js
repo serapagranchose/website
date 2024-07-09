@@ -22,7 +22,7 @@ export default function ProjectsSelector({
     setHovered(null)
   }
   const emphasized = hovered == 0 || hovered ? hovered : selected
-
+  
   return (
     <>
       <div className="pl-2 h-full w-1/3 scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent overflow-y-auto">
