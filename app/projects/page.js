@@ -9,12 +9,18 @@ export default async function Projects() {
   }).then(gistData => {
     return JSON.parse(gistData.files["resume.json"].content);
   })
-  
+
+  function compare( a, b ) {
+    if ( a.status < b.status ) return 1
+    if ( a.status > b.status ) return -1
+    return 0
+  }
+
   return (
     <>
       <Navbar/>
       <main className="pt-28 flex flex-row h-screen">
-        <ProjectsSelector projects={data.projects} />
+        <ProjectsSelector projects={Object.values(data.projects).sort(compare)} />
       </main>
     </>
   );
