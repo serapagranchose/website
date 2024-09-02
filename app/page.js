@@ -7,10 +7,10 @@ export default function Home() {
       <Navbar/>
       <Image
         className="object-cover h-screen w-full"
-        src="/me.jpg"
+        src="/thumbnails/me_0_pixelated.png"
         alt="me"
-        width={500}
-        height={500}
+        width={1920}
+        height={1080}
       />
     </main>
   );

@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import "./globals.css";
+import Cursor from './components/Cursor';
 
 const pixelated = localFont({
   src: [
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={pixelated.className}>
+        <Cursor />
         {children}
       </body>
     </html>

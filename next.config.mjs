@@ -7,6 +7,7 @@ const nextConfig = {
         hostname: 'raw.githubusercontent.com',
       },
     ],
+    unoptimized: true,
   },
 };
 
