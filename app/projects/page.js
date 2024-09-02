@@ -20,7 +20,7 @@ export default async function Projects() {
     <>
       <Navbar/>
       <main className="pt-28 flex flex-row h-screen">
-        <ProjectsSelector projects={Object.values(data.projects).sort(compare)} />
+        <ProjectsSelector projects={Object.values(data.projects).sort(compare)} works={Object.values(data.work).sort(compare)} />
       </main>
     </>
   );
