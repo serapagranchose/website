@@ -1,4 +1,4 @@
-import Navbar from &#39;../components/Navbar&#39;;
+import Navbar from '../components/Navbar';
 
 export default async function About() {
   const revalidatedData = await fetch("https://gist.githubusercontent.com/serapagranchose/bc9b8dd8959b352699aa258a7924b729/raw/e40b98bf9fc5a42a4df9baec46a3bbf24302eda0/resume.json", {
