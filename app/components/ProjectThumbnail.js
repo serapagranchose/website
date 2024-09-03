@@ -29,19 +29,12 @@ export default function ProjectThumbnail({
   });
 
   return (
-    <>
-      {project ?
-        <Image
-          className="pr-3"
-          src={thumbnailUrl}
-          alt="thumbnail"
-          width={2560}
-          height={1440}
-        />
-        :
-        <></>
-      }
-    </>
+    <Image
+      src={thumbnailUrl}
+      alt="thumbnail"
+      width={2560}
+      height={1440}
+    />
   );
 }
 

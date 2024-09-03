@@ -5,12 +5,12 @@ export default async function About() {
     next: { revalidate: 10 },
   }).then(results => {
     return results.json();
-  })
+  });
 
   return (
-    <>
-      <Navbar/>
-      <main className="pt-28 p-2 flex flex-row min-h-screen justify-between">
+    <main className="flex flex-col h-screen">
+      <Navbar />
+      <div className="p-2 flex-grow overflow-y-auto">
         <div>
           <h2 className="text-2xl">WHO I AM</h2>
           <p>
@@ -49,7 +49,7 @@ export default async function About() {
             I WAS ABLE TO PASS A TOEIC EQUIVALENT AT EPITECH WITH A SCORE OF 795, WHICH ENABLED ME TO GO TO SOUTH KOREA AND MEET MANY INTERNATIONAL CONNECTIONS, SUCH AS MY SPANISH PARTNER.<br/>
           </p>
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

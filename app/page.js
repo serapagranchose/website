@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 export default function Home() {
   return (
     <main className="flex flex-row flex-wrap min-h-screen justify-between">
-      <Navbar/>
+      <Navbar isMainPage={true} />
       <Image
         className="object-cover h-screen w-full"
         src="/thumbnails/me_0_pixelated.png"
