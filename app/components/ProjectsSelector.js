@@ -27,7 +27,7 @@ export default function ProjectsSelector({
 
   return (
     <div className='p-2 w-full flex-grow overflow-y-auto grid grid-cols-3 grid-rows-3'>
-      <div className="row-span-3 flex flex-col">
+      <div className="col-span-3 md:col-span-1 row-span-3 flex flex-col order-3 md:order-1">
         <div className="pb-5 flex">
           <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("professional")}>PROFESSIONAL</h2>
           <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("personal")}>PERSONAL</h2>
@@ -65,14 +65,14 @@ export default function ProjectsSelector({
           }
         </div>
       </div>
-      <div className="row-span-2 col-span-2">
+      <div className="col-span-3 md:col-span-2 row-span-1 md:row-span-2 order-1 md:order-2">
         {works[emphasized] || projects[emphasized] ?
           <ProjectThumbnail project={category === "professional" ? works[emphasized] : projects[emphasized]} />
           :
           <></>
         }
       </div>
-      <div className="col-span-3 pb-12 lg:pb-0 lg:col-start-2 lg:col-span-2 lg:place-self-end xl:pb-0 xl:col-start-3 xl:col-span-1 xl:place-self-end">
+      <div className="col-span-3 lg:col-span-2 xl:col-span-1 pb-12 order-2 md:order-3 lg:pb-0 lg:col-start-2 lg:place-self-end xl:col-start-3">
         <ProjectDescription project={category === "professional" ? works[emphasized] : projects[emphasized]} />
       </div>
     </div>
