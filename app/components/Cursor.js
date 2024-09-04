@@ -1,16 +1,17 @@
-'use client'
+import { useState, useEffect } from 'react';
 
-import React, { useState, useEffect } from 'react';
+export default function useMousePosition() {
+  const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 
-export default function Cursor() {
+  const updateMousePosition = e => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+
   useEffect(() => {
-    const handleMouseMove = ({clientX, clientY}) => {
+    window.addEventListener("mousemove", updateMousePosition);
 
-    }
+    return () => window.removeEventListener("mousemove", updateMousePosition);
   }, []);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  return (
-    <div className="bg-black"></div>
-  );
+  return mousePosition;
 }

@@ -7,6 +7,16 @@ body {
   background-color: #e0e0c0;
 }
 
+.mask-image-custom {
+  position: absolute;
+  background-color: red;
+  mask-image: url('../public/mask.svg');
+  -webkit-mask-image: url('../public/mask.svg');
+  mask-repeat: no-repeat;
+  mask-position: 50%;
+  mask-size: 50px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
