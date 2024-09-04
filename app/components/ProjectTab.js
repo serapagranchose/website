@@ -3,6 +3,7 @@ import Image from 'next/image';
 export default function ProjectTab({
   index,
   name,
+  status,
   isEmphasized,
   handleClick,
   handleMouseEnter,
@@ -21,7 +22,18 @@ export default function ProjectTab({
         width={32}
         height={32}
       />
-      <h2 className="text-2xl pl-2" onClick={() => handleClick(index)}>{index + ". " + name.toUpperCase()}</h2>
+      <div className="flex pl-2">
+        {status ?
+          <h2 className={`text-2xl pr-2 ${(status == "finished" ? 'text-green' : 'text-blue')}`} onClick={() => handleClick(index)}>
+            {"▮"}
+          </h2>
+          :
+          null
+        }
+        <h2 className="text-2xl" onClick={() => handleClick(index)}>
+          {index + ". " + name.toUpperCase()}
+        </h2>
+      </div>
     </div>
   )
 }

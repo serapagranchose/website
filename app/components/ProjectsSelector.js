@@ -54,6 +54,7 @@ export default function ProjectsSelector({
                   key={index}
                   index={index}
                   name={project.name}
+                  status={project.status}
                   isEmphasized={emphasized == index}
                   handleClick={handleClick}
                   handleMouseEnter={handleMouseEnter}
