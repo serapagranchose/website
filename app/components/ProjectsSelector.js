@@ -29,8 +29,8 @@ export default function ProjectsSelector({
     <div className='p-2 w-full flex-grow overflow-y-auto grid grid-cols-3 grid-rows-3'>
       <div className="col-span-3 md:col-span-1 row-span-3 flex flex-col order-3 md:order-1">
         <div className="pb-5 flex">
-          <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("professional")}>PROFESSIONAL</h2>
-          <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("personal")}>PERSONAL</h2>
+          <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("professional")}>PROFESSIONAL ({works.length})</h2>
+          <h2 className="bg-black text-white text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("personal")}>PERSONAL ({projects.length})</h2>
         </div>
         <div className="flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent">
           {category === "professional" ?
