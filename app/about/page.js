@@ -10,7 +10,7 @@ export default async function About() {
   return (
     <main className="flex flex-col h-screen">
       <Navbar />
-      <div className="p-2 flex-grow overflow-y-auto">
+      <div className="p-2 pb-12 lg:pb-2 flex-grow overflow-y-auto">
         <div>
           <h2 className="text-2xl">WHO I AM</h2>
           <p>
