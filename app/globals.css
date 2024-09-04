@@ -9,7 +9,6 @@ body {
 
 .mask-image-custom {
   position: absolute;
-  background-color: red;
   mask-image: url('../public/mask.svg');
   -webkit-mask-image: url('../public/mask.svg');
   mask-repeat: no-repeat;
