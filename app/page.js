@@ -18,13 +18,16 @@ export default function Home() {
         width={1920}
         height={1080}
       />
+      <div className="absolute text-2xl text-white grid w-full h-screen place-content-center lg:invisible">
+        <h2>CLICK ME</h2>
+      </div>
       <motion.div
         className="mask-image-custom w-full h-screen"
         animate={{
-          WebkitMaskPosition: `${x - (size/2)}px ${y - (size/2)}px`,
+          WebkitMaskPosition: `${x - (size / 2)}px ${y - (size / 2)}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration:0.5}}
+        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       >
         <Image
           className="object-[70%_top] lg:object-center object-cover w-full h-screen"
