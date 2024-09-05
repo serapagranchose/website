@@ -29,12 +29,18 @@ export default function ProjectThumbnail({
   });
 
   return (
-    <Image
-      src={thumbnailUrl}
-      alt="thumbnail"
-      width={2560}
-      height={1440}
-    />
+    <>
+      {project?.name == "website" ?
+        <iframe className="border border-2 lg:border-[8px] w-full h-full" src="/projects" title="Recursive Website"></iframe>
+        :
+        <Image
+          src={thumbnailUrl}
+          alt="thumbnail"
+          width={2560}
+          height={1440}
+        />
+      }
+    </>
   );
 }
 

@@ -66,14 +66,14 @@ export default function ProjectsSelector({
           }
         </div>
       </div>
-      <div className="col-span-3 md:col-span-2 row-span-1 md:row-span-2 order-1 md:order-2">
+      <div className="col-span-3 md:col-span-2 pb-2 md:pb-0 row-span-1 md:row-span-2 order-1 md:order-2">
         {works[emphasized] || projects[emphasized] ?
           <ProjectThumbnail project={category === "professional" ? works[emphasized] : projects[emphasized]} />
           :
           <></>
         }
       </div>
-      <div className="col-span-3 lg:col-span-2 xl:col-span-1 pb-12 order-2 md:order-3 lg:pb-0 lg:col-start-2 lg:place-self-end xl:col-start-3">
+      <div className="col-span-3 lg:col-span-2 xl:col-span-1 pb-2 md:pb-6 lg:pb-0 order-2 md:order-3 lg:pb-0 lg:col-start-2 lg:place-self-end xl:col-start-3">
         <ProjectDescription project={category === "professional" ? works[emphasized] : projects[emphasized]} />
       </div>
     </div>

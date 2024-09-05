@@ -6,7 +6,7 @@ export default function ProjectDescription({
 }) {
   return (
     <>
-      <div className={`w-full p-5 grid grid-cols-2 ${project ? "visible" : "invisible"} bg-white border-4 border-black`}>
+      <div className={`w-full h-full p-5 grid grid-cols-2 ${project ? "visible" : "invisible"} bg-white border-4 border-black`}>
         <Link
           className={`text-2xl ${project?.url ? 'hover:underline' : 'pointer-events-none'}`}
           href={project?.url ? project?.url : "#"}

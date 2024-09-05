@@ -3,7 +3,7 @@ import { ReactTyped } from "react-typed";
 
 export default function TypeWritter() {
   return (
-    <div className="flex bg-white p-2 pb-0">
+    <div className="flex bg-white px-2 pb-0">
       <ReactTyped
         strings={[
           "FULL STACK DEV",
