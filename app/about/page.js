@@ -1,17 +1,19 @@
 import Navbar from '../components/Navbar';
 
 export default async function About() {
-  const revalidatedData = await fetch("https://gist.githubusercontent.com/serapagranchose/bc9b8dd8959b352699aa258a7924b729/raw/e40b98bf9fc5a42a4df9baec46a3bbf24302eda0/resume.json", {
+  const data = await fetch("https://api.github.com/gists/bc9b8dd8959b352699aa258a7924b729", {
     next: { revalidate: 10 },
   }).then(results => {
     return results.json();
-  });
+  }).then(gistData => {
+    return JSON.parse(gistData.files["resume.json"].content);
+  })
 
   return (
     <main className="flex flex-col h-screen">
       <Navbar />
-      <div className="p-2 pb-12 lg:pb-2 flex-grow overflow-y-auto">
-        <div>
+      <div className="p-2 pb-12 lg:pb-2 w-full flex-grow overflow-y-auto grid grid-cols-3 grid-rows-3">
+        <div className="col-span-2 row-span-3 flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent">
           <h2 className="text-2xl">WHO I AM</h2>
           <p>
             HI! I&#39;M SÉRAPHIN PERROT - FULL STACK DEVELOPER, PIXEL ARTIST.<br/>
@@ -48,6 +50,24 @@ export default async function About() {
             I WAS ABLE TO PASS A TOEIC EQUIVALENT AT EPITECH WITH A SCORE OF 795, WHICH ENABLED ME TO GO TO SOUTH KOREA AND MEET MANY INTERNATIONAL CONNECTIONS, SUCH AS MY SPANISH PARTNER.<br/>
             I STUDIED SPANISH FROM SECONDARY SCHOOL TO HIGH SCHOOL FOR 5 YEARS, I ESTIMATE MY LEVEL AT B1 BUT I INTEND TO IMPROVE IN THE FUTURE FOR THE ONE I LOVE.<br/>
           </p>
+        </div>
+        <div className="col-span-1 p-2 border border-4">
+          <h2 className="text-2xl">CONFIGS</h2>
+          <div className="flex">
+            {data?.config.map((config, index) => {
+              return (
+                <p key={index} className="pb-2">
+                  NAME: {config?.name.toUpperCase()}<br/>
+                  TYPE: {config?.type.toUpperCase()}<br/>
+                  OS: {config?.OS.toUpperCase()}<br/>
+                  DISK: {config?.Disk.toUpperCase()}<br/>
+                  MEM: {config?.Memory.toUpperCase()}<br/>
+                  CPU: {config?.CPU.toUpperCase()}<br/>
+                  GPU: {config?.GPU.toUpperCase()}<br/>
+                </p>
+              )
+            })}
+          </div>
         </div>
       </div>
     </main>

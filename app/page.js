@@ -12,7 +12,7 @@ export default function Home() {
     <main className="flex flex-row flex-wrap min-h-screen justify-between">
       <Navbar isMainPage={true} />
       <Image
-        className="object-cover w-full h-screen"
+        className="object-[70%_top] lg:object-center object-cover w-full h-screen"
         src="/thumbnails/me_2_pixelated.png"
         alt="me"
         width={1920}
