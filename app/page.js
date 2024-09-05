@@ -27,7 +27,7 @@ export default function Home() {
         transition={{ type: "tween", ease: "backOut", duration:0.5}}
       >
         <Image
-          className="object-cover w-full h-screen"
+          className="object-[70%_top] lg:object-center object-cover w-full h-screen"
           src="/thumbnails/me_2.png"
           alt="me"
           width={1920}
