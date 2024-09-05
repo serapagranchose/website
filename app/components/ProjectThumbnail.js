@@ -11,13 +11,13 @@ export default function ProjectThumbnail({
 
     gifRequest.open("GET", `https://raw.githubusercontent.com/serapagranchose/${project?.name}/main/assets/images/thumbnail.gif`, true);
     gifRequest.send();
-    gifRequest.onload = function() {
+    gifRequest.onload = function () {
       if (gifRequest.status == 200) {
         setThumbnailUrl(`https://raw.githubusercontent.com/serapagranchose/${project?.name}/main/assets/images/thumbnail.gif`)
       } else {
         pngRequest.open("GET", `https://raw.githubusercontent.com/serapagranchose/${project?.name}/main/assets/images/thumbnail.png`, true);
         pngRequest.send();
-        pngRequest.onload = function() {
+        pngRequest.onload = function () {
           if (pngRequest.status == 200) {
             setThumbnailUrl(`https://raw.githubusercontent.com/serapagranchose/${project?.name}/main/assets/images/thumbnail.png`)
           } else {
@@ -31,14 +31,24 @@ export default function ProjectThumbnail({
   return (
     <>
       {project?.name == "website" ?
-        <iframe className="border border-2 lg:border-[8px] w-full h-full" src="/" title="Recursive Website"></iframe>
+        <iframe className="w-full h-full object-cover border-4 " src="/" title="Recursive Website"></iframe>
         :
-        <Image
-          src={thumbnailUrl}
-          alt="thumbnail"
-          width={2560}
-          height={1440}
-        />
+        <div className="relative bg-black flex w-full h-full">
+          <Image
+            className="w-full h-full object-cover opacity-15"
+            src={thumbnailUrl}
+            alt="thumbnail"
+            width={2560}
+            height={1440}
+          />
+          <Image
+            className="absolute self-center 2xl:self-start inset-0"
+            src={thumbnailUrl}
+            alt="thumbnail"
+            width={2560}
+            height={1440}
+          />
+        </div>
       }
     </>
   );
