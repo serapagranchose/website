@@ -12,7 +12,7 @@ export default async function About() {
   return (
     <main className="flex flex-col h-screen">
       <Navbar />
-      <div className="p-2 pb-12 lg:pb-2 w-full flex-grow overflow-y-auto grid grid-cols-3 grid-rows-3">
+      <div className="p-2 pb-16 lg:pb-0 w-full flex-grow overflow-y-auto lg:grid lg:grid-cols-3 lg:grid-rows-3">
         <div className="col-span-2 row-span-3 flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent">
           <h2 className="text-2xl">WHO I AM</h2>
           <p>
@@ -51,12 +51,12 @@ export default async function About() {
             I STUDIED SPANISH FROM SECONDARY SCHOOL TO HIGH SCHOOL FOR 5 YEARS, I ESTIMATE MY LEVEL AT B1 BUT I INTEND TO IMPROVE IN THE FUTURE FOR THE ONE I LOVE.<br/>
           </p>
         </div>
-        <div className="col-span-1 p-2 border border-4">
+        <div className="col-span-1 mt-6 lg:mt-0 p-2 border border-4">
           <h2 className="text-2xl">CONFIGS</h2>
-          <div className="flex">
+          <div className="flex justify-between">
             {data?.config.map((config, index) => {
               return (
-                <p key={index} className="pb-2">
+                <p key={index}>
                   NAME: {config?.name.toUpperCase()}<br/>
                   TYPE: {config?.type.toUpperCase()}<br/>
                   OS: {config?.OS.toUpperCase()}<br/>
