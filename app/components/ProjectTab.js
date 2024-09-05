@@ -11,7 +11,7 @@ export default function ProjectTab({
 }) {
   return (
     <div
-      className="group w-full block items-center flex pb-6"
+      className={`group w-full block items-center flex ${index == 0 ? "" : "pt-6"}`}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={() => handleMouseLeave()}
     >

@@ -32,7 +32,7 @@ export default function ProjectsSelector({
           <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("professional")}>PROFESSIONAL ({works.length})</h2>
           <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("personal")}>PERSONAL ({projects.length})</h2>
         </div>
-        <div className="flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent">
+        <div className="flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent pb-1">
           {category === "professional" ?
             works.map((work, index) => {
               return (
