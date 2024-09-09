@@ -21,7 +21,16 @@ export default function ProjectThumbnail({
           if (pngRequest.status == 200) {
             setThumbnailUrl(`https://raw.githubusercontent.com/serapagranchose/${project?.name}/main/assets/images/thumbnail.png`)
           } else {
-            setThumbnailUrl("/no_thumbnail.gif")
+            if (project?.name == "KBRW")
+              setThumbnailUrl("/thumbnails/kbrw.png")
+            else if (project?.name == "Crèche A La Demande")
+              setThumbnailUrl("/thumbnails/cald.png")
+            else if (project?.name == "S Com System")
+              setThumbnailUrl("/thumbnails/scom.png")
+            else if (project?.name == "ChantierCarré")
+              setThumbnailUrl("/thumbnails/cc.png")
+            else
+              setThumbnailUrl("/thumbnails/no_thumbnail.gif")
           }
         }
       }
