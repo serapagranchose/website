@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 export default function ProjectThumbnail({
   project
 }) {
-  const [thumbnailUrl, setThumbnailUrl] = useState("/no_thumbnail.gif");
+  const [thumbnailUrl, setThumbnailUrl] = useState("/thumbnails/no_thumbnail.gif");
   useEffect(() => {
     var gifRequest = new XMLHttpRequest();
     var pngRequest = new XMLHttpRequest();
