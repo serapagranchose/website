@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import "./globals.css";
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const pixelated = localFont({
   src: [
@@ -19,6 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={pixelated.className}>
         {children}
       </body>
