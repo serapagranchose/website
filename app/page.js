@@ -3,14 +3,34 @@ import Image from "next/image";
 import Navbar from './components/Navbar';
 import useMousePosition from './components/Cursor';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { x, y } = useMousePosition();
   const size = 128;
+  const [analyticsData, setAnalyticsData] = useState({
+    totalVisitors: '0',
+    uniqueVisitors: '0',
+    realTimeVisitors: '0',
+  });
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/analytics');
+      const data = await response.json();
+      setAnalyticsData(data);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <main className="flex flex-row flex-wrap min-h-screen justify-between">
       <Navbar isMainPage={true} />
+      <div className="absolute z-10 text-2xl bg-white p-2 bottom-0 invisible lg:visible">
+        <p>VISITORS: {analyticsData.totalVisitors}</p>
+        <p>UNIQ. VISITORS: {analyticsData.uniqueVisitors}</p>
+        <p>ACTIVE VISITORS: {analyticsData.realTimeVisitors}</p>
+      </div>
       <Image
         className="object-[70%_top] lg:object-center object-cover w-full h-screen"
         src="/thumbnails/me_2_pixelated.png"

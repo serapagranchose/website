@@ -1,5 +1,5 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import localFont from 'next/font/local';
-import Script from 'next/script'
 import "./globals.css";
 
 const pixelated = localFont({
@@ -20,23 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-          `}
-        </Script>
-      </head>
-      <body className={pixelated.className}>
-        {children}
-      </body>
+      <body className={pixelated.className}>{children}</body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }
