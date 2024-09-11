@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Link from 'next/link'
+import RandomShitSelector from '../components/RandomShitSelector';
 
 export default async function About() {
   const data = await fetch("https://api.github.com/gists/bc9b8dd8959b352699aa258a7924b729", {
@@ -102,24 +103,15 @@ export default async function About() {
               >INSTAGRAM</Link>
             </p>
           </div>
+
           <div className="mt-2 p-2 border-4">
-            <h2 className="text-2xl">CONFIGS</h2>
+            <h2 className="text-2xl">SKILLS</h2>
             <div className="flex justify-between">
-              {data?.config.map((config, index) => {
-                return (
-                  <div key={index} className="truncate">
-                    <p className="truncate">NAME: {config?.name.toUpperCase()}<br /></p>
-                    <p className="truncate">TYPE: {config?.type.toUpperCase()}<br /></p>
-                    <p className="truncate">OS: {config?.OS.toUpperCase()}<br /></p>
-                    <p className="truncate">DISK: {config?.Disk.toUpperCase()}<br /></p>
-                    <p className="truncate">MEM: {config?.Memory.toUpperCase()}<br /></p>
-                    <p className="truncate">CPU: {config?.CPU.toUpperCase()}<br /></p>
-                    <p className="truncate">GPU: {config?.GPU.toUpperCase()}<br /></p>
-                  </div>
-                )
-              })}
+
             </div>
           </div>
+
+          <RandomShitSelector configs={data.config} />
         </div>
       </div>
     </main>

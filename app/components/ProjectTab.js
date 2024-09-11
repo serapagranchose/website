@@ -11,16 +11,16 @@ export default function ProjectTab({
 }) {
   return (
     <div
-      className={`group w-full block items-center flex ${index == 0 ? "" : "pt-6"}`}
+      className={`group w-full items-center flex ${index == 0 ? "" : "pt-6"}`}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={() => handleMouseLeave()}
     >
       <Image
-        className={`w-fit h-fit ${isEmphasized ? "visible" : "invisible"}`}
+        className={`object-contain ${isEmphasized ? "visible" : "invisible"}`}
         src="/arrow.png"
         alt="me"
-        width={32}
-        height={32}
+        width={24}
+        height={24}
       />
       <div className="flex pl-2">
         {status ?
