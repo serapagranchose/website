@@ -26,7 +26,7 @@ async function getGA4Data() {
         property: `properties/${VIEW_ID}`,
         requestBody: {
           metrics: [{ name: 'totalUsers' }],
-          dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }], // or adjust as needed
+          dateRanges: [{ startDate: '2024-01-01', endDate: 'today' }], // or adjust as needed
         },
       }),
       // Unique visitors
@@ -34,7 +34,7 @@ async function getGA4Data() {
         property: `properties/${VIEW_ID}`,
         requestBody: {
           metrics: [{ name: 'activeUsers' }],
-          dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
+          dateRanges: [{ startDate: '2024-01-01', endDate: 'today' }],
         },
       }),
       // Real-time visitors
