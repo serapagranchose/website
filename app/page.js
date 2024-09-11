@@ -9,9 +9,9 @@ export default function Home() {
   const { x, y } = useMousePosition();
   const size = 128;
   const [analyticsData, setAnalyticsData] = useState({
-    totalVisitors: '0',
-    uniqueVisitors: '0',
-    realTimeVisitors: '0',
+    totalVisitors: '',
+    uniqueVisitors: '',
+    realTimeVisitors: '',
   });
   useEffect(() => {
     async function fetchData() {
@@ -26,10 +26,22 @@ export default function Home() {
   return (
     <main className="flex flex-row flex-wrap min-h-screen justify-between">
       <Navbar isMainPage={true} />
-      <div className="absolute z-10 text-2xl bg-white p-2 bottom-0 invisible lg:visible">
-        <p>VISITORS: {analyticsData.totalVisitors}</p>
-        <p>UNIQ. VISITORS: {analyticsData.uniqueVisitors}</p>
-        <p>ACTIVE VISITORS: {analyticsData.realTimeVisitors}</p>
+      <div className="absolute flex z-10 text-2xl bg-white p-2 pb-0 bottom-0 invisible lg:visible">
+        <div className="pr-2">
+          <p>VISITORS:</p>
+          <p>UNIQ. VISITORS:</p>
+          <p>ACTIVE VISITORS:</p>
+        </div>
+        <div>
+          <p className="opacity-25">000000</p>
+          <p className="opacity-25">000000</p>
+          <p className="opacity-25">000000</p>
+        </div>
+        <div className="absolute right-0 pr-2 text-right">
+          <p>{analyticsData.totalVisitors}</p>
+          <p>{analyticsData.uniqueVisitors}</p>
+          <p>{analyticsData.realTimeVisitors}</p>
+        </div>
       </div>
       <Image
         className="object-[70%_top] lg:object-center object-cover w-full h-screen"
