@@ -1,8 +1,7 @@
 import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
 
-const VIEW_ID = process.env.GA_PROPERTY_ID; // Replace with your GA4 Property ID
-
+const VIEW_ID = process.env.GA_PROPERTY_ID;
 async function getGA4Data() {
   const serviceAccountKey = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '{}');
 
@@ -26,7 +25,7 @@ async function getGA4Data() {
         property: `properties/${VIEW_ID}`,
         requestBody: {
           metrics: [{ name: 'totalUsers' }],
-          dateRanges: [{ startDate: '2024-01-01', endDate: 'today' }], // or adjust as needed
+          dateRanges: [{ startDate: '2024-01-01', endDate: 'today' }],
         },
       }),
       // Unique visitors
