@@ -56,7 +56,7 @@ export default function RandomShitSelector({
   }
 
   return (
-    <div className="mt-2 p-2 border-4">
+    <div className="my-2 p-2 border-4">
       <div className="flex">
         <Image
           className="object-contain scale-x-[-1] mr-2 pb-2"

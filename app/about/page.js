@@ -70,44 +70,46 @@ export default async function About() {
             I STUDIED KOREAN WHEN I WAS THERE FOR ONE YEAR BUT I JUST KNOW THE BASICS.
           </p>
         </div>
-        <div className="w-full lg:w-1/3 h-fit">
-          <div className="mt-6 lg:mt-0 p-2 border-4">
-            <h2 className="text-2xl">SOCIALS</h2>
-            <p className="truncate">
-              <Link
-                className={"hover:underline w-full"}
-                href={"https://www.linkedin.com/in/serapagranchose/"}
-                target="_blank"
-                aria-disabled={"https://www.linkedin.com/in/serapagranchose/"}
-              >LINKEDIN</Link>
-              {" "}
-              <Link
-                className={"hover:underline"}
-                href={"https://github.com/serapagranchose/"}
-                target="_blank"
-                aria-disabled={"https://github.com/serapagranchose/"}
-              >GITHUB</Link>
-              {" "}
-              <Link
-                className={"hover:underline"}
-                href={"mailto:seraphin.perrot@gmail.com"}
-                target="_blank"
-                aria-disabled={"mailto:seraphin.perrot@gmail.com"}
-              >EMAIL</Link>
-              {" "}
-              <Link
-                className={"hover:underline"}
-                href={"https://www.instagram.com/serapagranchose/"}
-                target="_blank"
-                aria-disabled={"https://www.instagram.com/serapagranchose/"}
-              >INSTAGRAM</Link>
-            </p>
-          </div>
+        <div className="w-full grid grid-cols-1 content-between lg:w-1/3">
+          <div>
+            <div className="mt-6 lg:mt-0 p-2 border-4">
+              <h2 className="text-2xl">SOCIALS</h2>
+              <p className="truncate">
+                <Link
+                  className={"hover:underline w-full"}
+                  href={"https://www.linkedin.com/in/serapagranchose/"}
+                  target="_blank"
+                  aria-disabled={"https://www.linkedin.com/in/serapagranchose/"}
+                >LINKEDIN</Link>
+                {" "}
+                <Link
+                  className={"hover:underline"}
+                  href={"https://github.com/serapagranchose/"}
+                  target="_blank"
+                  aria-disabled={"https://github.com/serapagranchose/"}
+                >GITHUB</Link>
+                {" "}
+                <Link
+                  className={"hover:underline"}
+                  href={"mailto:seraphin.perrot@gmail.com"}
+                  target="_blank"
+                  aria-disabled={"mailto:seraphin.perrot@gmail.com"}
+                >EMAIL</Link>
+                {" "}
+                <Link
+                  className={"hover:underline"}
+                  href={"https://www.instagram.com/serapagranchose/"}
+                  target="_blank"
+                  aria-disabled={"https://www.instagram.com/serapagranchose/"}
+                >INSTAGRAM</Link>
+              </p>
+            </div>
 
-          <div className="mt-2 p-2 border-4">
-            <h2 className="text-2xl">SKILLS</h2>
-            <p>{"C,C++,Java,JavaScript,TypeScript,Python,PHP,Lua".toUpperCase()}</p>
-            <p>{"React,Redux,Anime.js,Chart.js,JQuery".toUpperCase()}</p>
+            <div className="mt-2 p-2 border-4">
+              <h2 className="text-2xl">SKILLS</h2>
+              <p>{"C,C++,Java,JavaScript,TypeScript,Python,PHP,Lua".toUpperCase()}</p>
+              <p>{"React,Redux,Anime.js,Chart.js,JQuery".toUpperCase()}</p>
+            </div>
           </div>
 
           <RandomShitSelector configs={data.config} />
