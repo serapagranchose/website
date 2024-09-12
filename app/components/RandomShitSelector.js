@@ -13,7 +13,7 @@ export default function RandomShitSelector({
     if ((index + i) > categories.length - 1)
       setIndex(0)
     else if ((index + i) < 0)
-      setIndex(categories.length)
+      setIndex(categories.length - 1)
     else
       setIndex(index + i)
   }
@@ -59,16 +59,16 @@ export default function RandomShitSelector({
     <div className="mt-2 p-2 border-4">
       <div className="flex">
         <Image
-          className="object-contain scale-x-[-1] mr-2"
+          className="object-contain scale-x-[-1] mr-2 pb-2"
           src="/arrow.png"
           alt="me"
           width={24}
           height={24}
           onClick={() => goesThrough(-1)}
         />
-        <h2 className="text-2xl">{categories[index]?.toUpperCase()}</h2>
+        <h2 className="text-2xl ">{categories[index]?.toUpperCase()}</h2>
         <Image
-          className="object-contain ml-2"
+          className="object-contain ml-2 pb-2"
           src="/arrow.png"
           alt="me"
           width={24}
