@@ -11,11 +11,11 @@ export default function ProjectsSelector({
   works
 }) {
   const [category, setCategory] = useState("professional")
-  const [project, setProject] = useState(null)
+  const [selected, setSelected] = useState(null)
   const [hovered, setHovered] = useState(null)
 
   function handleClick(index) {
-    project == index ? setProject(null) : setProject(index)
+    selected == index ? setSelected(null) : setSelected(index)
   }
   function handleMouseEnter(index) {
     setHovered(index)
@@ -23,14 +23,14 @@ export default function ProjectsSelector({
   function handleMouseLeave() {
     setHovered(null)
   }
-  const emphasized = hovered == 0 || hovered ? hovered : project
+  const emphasized = hovered == 0 || hovered ? hovered : selected
 
   return (
     <div className='p-2 pb-12 lg:pb-2 w-full flex flex-col flex-grow overflow-y-auto md:grid md:grid-cols-3 md:grid-rows-3'>
       <div className="col-span-3 md:col-span-1 row-span-3 flex flex-col order-3 md:order-1">
         <div className="pb-5 flex">
-          <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("professional")}>PROFESSIONAL ({works.length})</h2>
-          <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => setCategory("personal")}>PERSONAL ({projects.length})</h2>
+          <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => {setCategory("professional"), setSelected(null)}}>PROFESSIONAL ({works.length})</h2>
+          <h2 className="bg-black text-white truncate text-2xl pt-2 px-2 mr-2" onClick={() => {setCategory("personal"), setSelected(null)}}>PERSONAL ({projects.length})</h2>
         </div>
         <div className="flex-grow overflow-y-auto scrollbar-hide scrollbar scrollbar-thumb-sky-700 scrollbar-track-transparent pb-1">
           {category === "professional" ?
@@ -40,7 +40,8 @@ export default function ProjectsSelector({
                   key={index}
                   index={index}
                   name={work.name}
-                  isEmphasized={emphasized == index}
+                  isHovered={hovered == index}
+                  isSelected={selected == index}
                   handleClick={handleClick}
                   handleMouseEnter={handleMouseEnter}
                   handleMouseLeave={handleMouseLeave}
@@ -55,7 +56,8 @@ export default function ProjectsSelector({
                   index={index}
                   name={project.name}
                   status={project.status}
-                  isEmphasized={emphasized == index}
+                  isHovered={hovered == index}
+                  isSelected={selected == index}
                   handleClick={handleClick}
                   handleMouseEnter={handleMouseEnter}
                   handleMouseLeave={handleMouseLeave}

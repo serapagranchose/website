@@ -4,7 +4,8 @@ export default function ProjectTab({
   index,
   name,
   status,
-  isEmphasized,
+  isHovered,
+  isSelected,
   handleClick,
   handleMouseEnter,
   handleMouseLeave
@@ -16,7 +17,7 @@ export default function ProjectTab({
       onMouseLeave={() => handleMouseLeave()}
     >
       <Image
-        className={`object-contain pb-2 ${isEmphasized ? "visible" : "invisible"}`}
+        className={`object-contain ${isSelected ? "pl-2" : ""} pb-2 ${isHovered || isSelected ? "visible" : "invisible"}`}
         src="/arrow.png"
         alt="me"
         width={24}
