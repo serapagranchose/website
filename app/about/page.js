@@ -106,9 +106,8 @@ export default async function About() {
 
           <div className="mt-2 p-2 border-4">
             <h2 className="text-2xl">SKILLS</h2>
-            <div className="flex justify-between">
-
-            </div>
+            <p>{"C,C++,Java,JavaScript,TypeScript,Python,PHP,Lua".toUpperCase()}</p>
+            <p>{"React,Redux,Anime.js,Chart.js,JQuery".toUpperCase()}</p>
           </div>
 
           <RandomShitSelector configs={data.config} />
