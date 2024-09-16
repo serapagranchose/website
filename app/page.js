@@ -19,8 +19,10 @@ export default function Home() {
       const data = await response.json();
       setAnalyticsData(data);
     }
-
-    fetchData();
+    const interval = setInterval(() => {      
+      fetchData();
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
