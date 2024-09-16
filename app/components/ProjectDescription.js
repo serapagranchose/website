@@ -27,7 +27,7 @@ export default function ProjectDescription({
           tabIndex={project?.url ? -1 : undefined}
         >
           {project?.name.toUpperCase()}
-          <div className="invisible md:visible">
+          <div className={`invisible md:${project ? "visible" : "invisible"}`}>
             <Image
               className="object-contain ml-2"
               src="/arrow.png"
