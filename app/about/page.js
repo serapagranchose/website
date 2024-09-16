@@ -106,6 +106,11 @@ export default async function About() {
             </div>
 
             <div className="mt-2 p-2 border-4">
+              <h2 className="text-2xl">CURRICULUM VITAE</h2>
+              <Link className="col-span-2 pt-2 hover:underline" href={"Séraphin\ Perrot\ Curriculum\ Vitae.pdf"} target="_blank">🗎 {"Séraphin Perrot Curriculum Vitae.pdf".toUpperCase()}</Link>
+            </div>
+
+            <div className="mt-2 p-2 border-4">
               <h2 className="text-2xl">SKILLS</h2>
               <p>{"C,C++,Java,JavaScript,TypeScript,Python,PHP,Lua".toUpperCase()}</p>
               <p>{"React,Redux,Anime.js,Chart.js,JQuery".toUpperCase()}</p>
