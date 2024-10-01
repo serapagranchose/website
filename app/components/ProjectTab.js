@@ -11,11 +11,7 @@ export default function ProjectTab({
   handleMouseLeave
 }) {
   return (
-    <div
-      className={`group w-full items-center flex ${index == 0 ? "" : "pt-6"}`}
-      onMouseEnter={() => handleMouseEnter(index)}
-      onMouseLeave={() => handleMouseLeave()}
-    >
+    <div className={`group w-full items-center flex ${index == 0 ? "" : "pt-6"}`}>
       <Image
         className={`object-contain ${isSelected ? "pl-2" : ""} pb-2 ${isHovered || isSelected ? "visible" : "invisible"}`}
         src="/arrow.png"
@@ -23,7 +19,11 @@ export default function ProjectTab({
         width={24}
         height={24}
       />
-      <div className="flex pl-2">
+      <div className="flex pl-2"
+        onClick={() => handleClick(index)}
+        onMouseEnter={() => handleMouseEnter(index)}
+        onMouseLeave={() => handleMouseLeave()}
+      >
         {status ?
           <h2 className={`text-2xl pr-2 ${(status == "finished" ? 'text-green' : 'text-blue')}`} onClick={() => handleClick(index)}>
             {"▮"}
@@ -31,7 +31,7 @@ export default function ProjectTab({
           :
           null
         }
-        <h2 className="text-2xl" onClick={() => handleClick(index)}>
+        <h2 className="text-2xl">
           {index + ". " + name.toUpperCase()}
         </h2>
       </div>
