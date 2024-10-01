@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 const VIEW_ID = process.env.GA_PROPERTY_ID;
 async function getGA4Data() {
-  const serviceAccountKey = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '{}');
+  const serviceAccountKey = JSON.parse(Buffer.from(process.env.GOOGLE_SERVICE_ACCOUNT_KEY, 'base64').toString());
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
@@ -46,6 +46,7 @@ async function getGA4Data() {
     ]);
 
     return {
+      serviceAccountKey: serviceAccountKey,
       totalVisitors: totalVisitorsRes.data.rows?.[0]?.metricValues?.[0]?.value || '0',
       uniqueVisitors: uniqueVisitorsRes.data.rows?.[0]?.metricValues?.[0]?.value || '0',
       realTimeVisitors: realTimeVisitorsRes.data.rows?.[0]?.metricValues?.[0]?.value || '0',
